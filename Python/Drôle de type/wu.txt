@@ -1,0 +1,3 @@
+secret est toujours dans les locals
+
+1) if False else (secret

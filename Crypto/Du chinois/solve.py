@@ -1,0 +1,1 @@
+print(open("bizarre.raw", "r").read().encode("utf-16be"))

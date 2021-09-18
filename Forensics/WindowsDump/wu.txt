@@ -1,0 +1,8 @@
+Partie 1 :
+
+avec mimikatz :
+lsadump::sam /system:SYSTEM /sam:sam
+
+HackademINT{7e0603db8c899437e09450237956b536}
+
+Partie 2 :

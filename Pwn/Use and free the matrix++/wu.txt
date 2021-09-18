@@ -1,0 +1,5 @@
+créer une Matrix
+la détruire avec looseControl
+créer un Neo (instancié au meme endroit que la Matrix)
+Matrix pointe vers la même adresse que Neo, donc faire looseControl
+pour appeler hackTheMatrix sur Neo

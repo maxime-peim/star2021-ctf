@@ -1,0 +1,4 @@
+L'adresse du canard est donnée.
+La string de format est à la position 6 sur la pile. (%x-%x...)
+
+HackademINT{N0_sC000pe!!!}

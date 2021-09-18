@@ -1,0 +1,2 @@
+on injecte un format string {!r} pour afficher la représentation du dindon
+HackademINT{glouglou_gL0u-gLO|_|}

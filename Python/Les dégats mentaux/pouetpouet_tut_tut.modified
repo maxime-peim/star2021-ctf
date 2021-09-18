@@ -1,0 +1,44 @@
+#! /moi/j_aime_bien/les/paths/a/la/con/python3.9.6
+from sys import argv
+glbl = globals()
+from base64 import b64encode
+
+def gene():
+    A = 'AA'
+    glbl[A] = '\x03'
+    a = 0
+    while True:
+        glbl[A] = bytes([a + 8]).decode()
+        a += 1
+        A = b64encode(bytes([a])).decode()[:2]
+        yield b64encode(bytes([a]))
+
+G = gene()
+
+try:
+    last = argv[0].split(argv[1][17])[-1]
+except:
+    print('Non')
+    exit()
+
+xored = [ord(last[i]) ^ ord(c) for i, c in enumerate(argv[1][len(last)-1::-1])]
+l = []
+for j, c in enumerate(argv[1][18:]):
+    try:
+        l.append((ord(c) << 8) + ((int(str(next(G)[1]) + str(j.bit_length()))) & 0xff ^ xored[j]))
+    except:
+        l.append((ord(c) << 8) + ((int(str(next(G)[1]) + str(j.bit_length()))) & 0xff))
+try:
+    if Pg == 'F':
+        print('Non')
+        exit()
+except:
+    print('Non')
+    exit()
+
+end = [29301, 13367, 27041, 21384, 24446, 28723, 26045, 30124, 29701, 24375, 60056, 29855, 29247, 25887, 24478, 20633, 21819, 24375, 25487, 12299, 28047, 27915, 25999, 28171, 29839, 13067, 29327, 24331, 21903, 19979, 24463, 28683, 17808, 21772, 24464, 28684, 19600, 29964, 29584, 32012]
+
+if l == end:
+    print('Tu peux valider avec ce flag, gg')
+else:
+    print('Non')

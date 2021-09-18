@@ -1,0 +1,4 @@
+On cherche la string sur la pile avec un format string suivant : %n$s
+où n est la position de l'argument sur la pile
+avec n = 20
+HackademINT{g0tt4_C@7ch_em_4ll}
